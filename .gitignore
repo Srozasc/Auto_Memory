@@ -1,0 +1,11 @@
+# Ignorar carpetas generadas de prueba / logs corporativos
+/Auto_memory/
+/docs/
+
+# Ignorar entorno de gemini / temporal
+/.gemini/
+/tmp/
+
+# Ignorar archivos locales de Windows
+Thumbs.db
+Desktop.ini
