@@ -4,26 +4,44 @@ Un sistema de memoria estratégica, modular y portable para agentes de IA desarr
 
 Esta skill dota a los agentes de IA de la capacidad para recordar decisiones técnicas, llevar un control de estado entre sesiones ("relevo") y capturar descrubrimientos clave de forma automática.
 
-## 📁 Estructura del Skill
+## 🛠️ Instalación Rápida
 
-El proyecto del skill se organiza de forma autónoma dentro de la carpeta del propio skill (`.agent/skills/auto_memory/`):
+Para instalar este skill en tu proyecto y que tu agente de IA pueda usarlo de inmediato, ejecuta uno de los siguientes comandos desde la raíz de tu proyecto:
+
+**En Windows (PowerShell):**
+```powershell
+New-Item -ItemType Directory -Force -Path ".agent/skills/auto_memory"; git clone https://github.com/Srozasc/Auto_Memory .agent/skills/auto_memory
+```
+
+**En Linux / macOS (Bash):**
+```bash
+mkdir -p .agent/skills/auto_memory && git clone https://github.com/Srozasc/Auto_Memory .agent/skills/auto_memory
+```
+
+---
+
+## 📁 Estructura del Repositorio
+
+El skill se organiza para ser clonado directamente en la carpeta `.agent/skills/` de cualquier proyecto:
 
 ```text
-auto_memory/
-├── SKILL.md         # Instrucciones CORE («Prompt» base) que el agente lee al cargar el skill
-├── README.md        # Este archivo
-├── docs/            # Manuales detallados para cada herramienta (Lazy-loaded por el agente)
-│   ├── tool_doctor.md
-│   ├── tool_harvest.md
-│   ├── tool_stats.md
-│   ├── tool_suggest_key.md
-│   └── tool_timeline.md
-└── scripts/         # Herramientas operativas (PowerShell "Zero-Install")
-    ├── doctor.ps1
-    ├── harvest.ps1
-    ├── stats.ps1
-    ├── suggest-key.ps1
-    └── timeline.ps1
+/ (Raíz del Repositorio)
+├── README.md             # Guía de instalación y uso
+├── .gitignore            # Exclusión de archivos locales/temporales
+└── .agent/skills/auto_memory/
+    ├── SKILL.md          # Instrucciones CORE («Prompt» base)
+    ├── docs/             # Manuales detallados (Lazy-loaded)
+    │   ├── tool_doctor.md
+    │   ├── tool_harvest.md
+    │   ├── tool_stats.md
+    │   ├── tool_suggest_key.md
+    │   └── tool_timeline.md
+    └── scripts/          # Herramientas operativas (PowerShell)
+        ├── doctor.ps1
+        ├── harvest.ps1
+        ├── stats.ps1
+        ├── suggest-key.ps1
+        └── timeline.ps1
 ```
 
 *(Nota: La base de datos / conocimiento generado por el skill se guarda en la carpeta superior raíz del proyecto en `Auto_memory/`)*
